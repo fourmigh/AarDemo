@@ -17,6 +17,8 @@ android {
 //        versionName "1.0.0"
         //增加versionName
         versionName "1.0.1"
+        //将app模块中的代码移至本模块中
+        versionName "1.0.2"
     }
 
     buildTypes {
@@ -45,4 +47,6 @@ android {
 }
 
 dependencies {
+    api libs.androidx.core.ktx
+    api libs.androidx.appcompat
 }

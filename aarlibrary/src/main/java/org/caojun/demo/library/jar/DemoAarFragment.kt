@@ -1,12 +1,11 @@
-package org.caojun.demo.aar.demo
+package org.caojun.demo.library.jar
 
+import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import org.caojun.demo.aar.databinding.FragmentDemoAarBinding
-import org.caojun.demo.library.jar.DemoAar
+import org.caojun.demo.library.jar.databinding.FragmentDemoAarBinding
 
 class DemoAarFragment : Fragment() {
 
