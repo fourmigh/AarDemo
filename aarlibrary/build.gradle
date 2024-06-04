@@ -1,0 +1,48 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'org.caojun.demo.library.jar'
+    compileSdk libs.versions.compileSdkVersion.get().toInteger()
+
+    defaultConfig {
+        minSdk 25
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        //模块创建
+//        versionName "1.0.0"
+        //增加versionName
+        versionName "1.0.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
+        targetCompatibility JavaVersion.toVersion(libs.versions.javaVersion.get())
+    }
+    kotlinOptions {
+        jvmTarget = libs.versions.javaVersion.get()
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    // 在 Android 应用模块中，可能还需要包含以下配置
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "aarLibrary-${variant.mergedFlavor.versionName}.aar"
+        }
+    }
+}
+
+dependencies {
+}
