@@ -24,7 +24,7 @@ class DemoAarFragment : Fragment() {
         _binding = FragmentDemoAarBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.textView.text = "${binding.textView.text}\n${DemoAar.TAG}\n${BuildConfig.LibraryVersion}"
+        binding.textView.text = "${binding.textView.text}\n${DemoAar.TAG}\n${BuildConfig.VERSION_NAME}"
 
         return root
     }
