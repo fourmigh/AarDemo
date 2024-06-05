@@ -16,9 +16,13 @@ android {
         //模块创建
 //        versionName "1.0.0"
         //增加versionName
-        versionName "1.0.1"
+//        versionName "1.0.1"
         //将app模块中的代码移至本模块中
-        versionName "1.0.2"
+//        versionName "1.0.2"
+        //每个模块统一增加字段BuildConfig.LibraryVersion
+        versionName "1.0.4"
+
+        buildConfigField 'String','LibraryVersion',"\"${defaultConfig.versionName}\""
     }
 
     buildTypes {
@@ -36,6 +40,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     // 在 Android 应用模块中，可能还需要包含以下配置
